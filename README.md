@@ -1,16 +1,57 @@
-# React + Vite
+# FSV-ReactJS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto de ejemplo creado con Vite + React.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 18+ (recomendado)
+- npm (v8+)
 
-## React Compiler
+## Instalación
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Clonar el repositorio e instalar dependencias:
 
-## Expanding the ESLint configuration
+```bash
+git clone https://github.com/shini66/FSV-ReactJS
+cd FSV-ReactJS
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Comandos útiles
+
+- `npm run dev` — Inicia servidor de desarrollo (HMR). Por defecto en http://localhost:5173
+- `npm run build` — Genera la versión de producción en `dist`
+- `npm run preview` — Previsualiza la versión de producción localmente
+- `npm run lint` — Ejecuta ESLint sobre el proyecto
+
+Ejemplo para desarrollo:
+
+```bash
+npm run dev
+# abrir http://localhost:5173
+```
+
+## Alias y configuración
+
+Este proyecto usa el alias `@` apuntando a la carpeta `src`. La configuración está en `vite.config.js`:
+
+```js
+// vite.config.js
+resolve: { alias: { '@': '/src' } }
+```
+
+Si tenés imports como `@/styles/index.css` y aparecen errores, verificá que la carpeta `src` tenga `styles/` y que el alias exista.
+
+## Estructura del proyecto (resumen)
+
+- `index.html` — punto de entrada HTML
+- `src/app/` — componentes principales y punto de arranque
+- `src/assets/` — imágenes y recursos estáticos
+- `src/components/` — componentes React
+- `src/styles/` — hojas de estilo (`index.css`, `App.css`)
+
+## Resolución de problemas
+
+- Puerto ocupado: Vite puede elegir otro puerto automáticamente; revisá la salida al ejecutar `npm run dev`.
+- Alias no resuelto: verificá `vite.config.js` y reiniciá el servidor.
+
