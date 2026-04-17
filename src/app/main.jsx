@@ -1,10 +1,19 @@
 import "@/styles/index.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { DateDisplay, ClockDisplay } from "@/components/Clock.jsx";
 import CardList from "../components/card/CardList.jsx";
+import Example from "../components/example/Example2.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <CardList />
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div className="text-2xl font-bold mb-4">
+        <ClockDisplay />
+        <br />
+        <DateDisplay />
+      </div>
+      <Example />
+    </div>
   </StrictMode>,
 );
