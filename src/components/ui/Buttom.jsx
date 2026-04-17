@@ -1,4 +1,4 @@
-function Button({type = 'button', label = 'Click me', onClick, buttonType = 'primary', className = ''}) {
+function Button({type = 'button', label = 'Click me', onClick, buttonType = 'primary', className = '', icon = null}) {
     const baseClass = 'py-2 px-4 rounded';
     let typeClass = '';
     switch (buttonType) {
@@ -14,10 +14,11 @@ function Button({type = 'button', label = 'Click me', onClick, buttonType = 'pri
         default:
             typeClass = 'bg-blue-500 text-white hover:bg-blue-600';
     }
-    const combinedClass = `${baseClass} ${typeClass} ${className}`;
+    const combinedClass = `inline-flex items-center gap-2 ${baseClass} ${typeClass} ${className}`;
 
     return (
         <button type={type} onClick={onClick} className={combinedClass}>
+            {icon ? <span className="flex items-center">{icon}</span> : null}
             {label}
         </button>
     );

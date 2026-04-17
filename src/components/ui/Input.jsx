@@ -1,7 +1,7 @@
-function Input({type = 'text', label = '', placeholder = '', value, onChange, className = '', style = {}}) {
+function Input({type = 'text', label = '', placeholder = '', value, onChange, className = 'w-full p-2 border border-gray-300 rounded', style = {}}) {
     return (
         <>
-            <label>{label}</label>
+            <label className="block text-gray-700 mb-2">{label}</label>
             <input 
                 type={type} 
                 placeholder={placeholder} 
