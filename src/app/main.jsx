@@ -1,14 +1,25 @@
 import "@/styles/index.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { DateDisplay, ClockDisplay } from "@/components/Clock.jsx";
-import CardList from "../components/card/CardList.jsx";
-import Example from "../components/example/Example2.jsx";
+import { BrowserRouter } from "react-router-dom";
+import Nav from "@/components/ui/Nav.jsx";
+import Footer from "../components/ui/footer.jsx";
+import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <Example />
-    </div>
+    <BrowserRouter>
+      <Nav />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <App />
+      </div>
+      <Footer />
+    </BrowserRouter>
   </StrictMode>,
 );
