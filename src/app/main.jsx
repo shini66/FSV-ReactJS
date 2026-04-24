@@ -8,11 +8,6 @@ import Example from "../components/example/Example2.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <div className="text-2xl font-bold mb-4">
-        <ClockDisplay />
-        <br />
-        <DateDisplay />
-      </div>
       <Example />
     </div>
   </StrictMode>,
