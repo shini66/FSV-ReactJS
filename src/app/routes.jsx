@@ -4,6 +4,7 @@ import Nav from "../components/ui/Nav";
 import Login from "../page/Login";
 import Home from "../page/Home";
 import Contact from "../page/Contact";
+import About from "../page/About";
 
 function RoutesApp() {
     return (
@@ -24,6 +25,7 @@ function AppRoutes() {
             <main className="flex-1">
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/login" element={<Login />} />
                 </Routes>
