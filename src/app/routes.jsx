@@ -5,6 +5,7 @@ import Login from "../page/Login";
 import Home from "../page/Home";
 import Contact from "../page/Contact";
 import About from "../page/About";
+import Post from "../page/Post";
 
 function RoutesApp() {
     return (
@@ -26,6 +27,7 @@ function AppRoutes() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/post" element={<Post />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/login" element={<Login />} />
                 </Routes>
