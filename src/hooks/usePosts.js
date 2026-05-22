@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { apiPostList } from "../api/apiAxios";
+import { apiPostList } from "../api/apiPost.js";
 
 const PAGE_SIZE = 8;
 
