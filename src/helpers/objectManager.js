@@ -1,28 +1,18 @@
+import { extraction } from './extraction';
+import { extractionRename } from './extractionRename';
+import { readProperty } from './readProperty';
+import { updateProperty } from './updateProperty';
+import { deleteProperty } from './deleteProperty';
 
 const objectManager = {
-    extraction : function(object) {
-        let {nombre, edad} = object;
-        console.log(`El nombre es ${nombre} y la edad es ${edad}`);
-    },
-    extractionRename : function(object) {
-        let {nombre: responsable, tarea: tarea} = object;
-        console.log(`El responsable es ${responsable} y la tarea es ${tarea}`);
-    }
-}
+    extraction,
+    extractionRename
+};
 
 const manipulateObject = {
-    read : function(object, key) {
-        let value = object[key];
-        console.log(`Valor de la propiedad ${key}: ${value}`);
-    },
-    update : function(object, key, newValue) {
-        object[key] = newValue;
-        console.log('Objeto actualizado:', object);
-    },
-    delete : function(object, key) {
-        delete object[key];
-        console.log('Objeto después de eliminar la propiedad:', object);
-    }
-}
+    read: readProperty,
+    update: updateProperty,
+    delete: deleteProperty
+};
 
-export  {objectManager, manipulateObject};
+export { objectManager, manipulateObject };
