@@ -1,6 +1,6 @@
-import fakeStoreApi from "./services/fakeStoreApi.js";
+import fakeStoreApi from "../services/fakeStoreApi.js";
 
-export async function apiProductList() {
+async function apiProductList() {
     try {
         const response = await fakeStoreApi.get("/products");
         return response.data;
@@ -10,7 +10,7 @@ export async function apiProductList() {
     }
 }
 
-export async function apiProductDetail(id) {
+async function apiProductDetail(id) {
     try {
         const response = await fakeStoreApi.get(`/products/${id}`);
         return response.data;
@@ -19,3 +19,5 @@ export async function apiProductDetail(id) {
         throw error;
     }
 }
+
+export { apiProductList, apiProductDetail };
