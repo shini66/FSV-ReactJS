@@ -1,14 +1,15 @@
-import axios from "axios";
+import axios from 'axios';
 
-const api =  axios.create({
-    baseURL: import.meta.env.VITE_API_URL || "https://jsonplaceholder.typicode.com/",
+const API_BASE_URL = import.meta.env.VITE_API_STORE_URL || 'https://fakestoreapi.com';
+
+const fakeStoreApi = axios.create({
+    baseURL: API_BASE_URL,
     headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-    }
-})
+        'Content-Type': 'application/json',
+    },
+});
 
-api.interceptors.request.use(
+fakeStoreApi.interceptors.request.use(
     (config) => {
         console.log("Solicitud enviada:", config);
         return config;
@@ -19,7 +20,7 @@ api.interceptors.request.use(
     }
 );
 
-api.interceptors.response.use(
+fakeStoreApi.interceptors.response.use(
     (response) => {
         console.log("Respuesta recibida:", response);
         return response;
@@ -30,4 +31,4 @@ api.interceptors.response.use(
     }
 );
 
-export default api;
+export default fakeStoreApi;

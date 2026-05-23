@@ -1,8 +1,8 @@
-import api from "../helpers/api";
+import jsonPlaceholder from "../services/jsonPlaceholderApi.js";
 
 async function apiPostList(){
     try {
-        const response = await api.get("/posts");
+        const response = await jsonPlaceholder.get("/posts");
         return response.data;
     } catch (error) {
         console.error("Error al obtener la lista de posts:", error);

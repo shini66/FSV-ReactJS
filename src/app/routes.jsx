@@ -26,9 +26,8 @@ function AppRoutes() {
             <main className="flex-1">
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
                     <Route path="/post" element={<Post />} />
-                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/about" element={<About />} />
                     <Route path="/login" element={<Login />} />
                 </Routes>
             </main>
